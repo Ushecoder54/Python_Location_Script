@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phone-geocoder-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phone-geocoder-app
+  template:
+    metadata:
+      labels:
+        app: phone-geocoder-app
+    spec:
+      containers:
+      - name: phone-geocoder-app
+        image: ushecoder54/phone-geocoder-app:latest
+        ports:
+        - containerPort: 80
